@@ -1,0 +1,15 @@
+BoardReader Algorithym
+
+08/31/15
+
+Finished scanning source code of Lobby page for 'Board' id numbers. All Board ID's are stored in an array.
+
+** NEXT **
+
+Match Board ID's with Board Names. [X]
+Seperate Forums from Archives ~ Not necessary.
+
+09/01/15 
+
+Wrote statements to parse out the names of the Boards.
+
