@@ -63,47 +63,41 @@ function parseSourceCode(sourceCode)	{
 	var forumDescSearchNumStart = new Number;
 	var forumDescSearchNumEnd = new Number;
 	
+	var forumModIdNumString = new String;
+	var forumModUsernameString = new String;
+	var forumModSearchNumStart = new Number;
+	var forumModSearchNumEnd = new Number;
+	var forumModIdNumSearchNumStart = new Number;
+	var forumModIdNumSearchNumEnd = new Number;
+	var forumModUsernameSearchNumStart = new Number;
+	var forumModUsernameSearchNumEnd = new Number;
+		
 	var forumString_Array = new Array;
 	var forumNameString_Array = new Array;
-<<<<<<< HEAD
 	var forumDescString_Array = new Array;
+	var forumModIdNumString_Array = new Array;
+	var forumModUsernameString_Array = new Array;
 	
 	//var PosterInfo = new Array;
 	
-	indexString_Array = 
-		[	"?az=show_topics&",
-			"=",
-			"\"",
-			"<span class=\"dclink\">",
-=======
-	
-	//var PosterInfo = new Array;
-	
-	forumIndexNum = sourceCode.indexOf("<span class=\"dclink\">");
-	var forumIndexStringLength = "<span class=\"dclink\">".length;
-	console.log("Forum Index Before Loop: forumIndexNum = " + forumIndexNum);
-	
-	while (forumIndexNum !== -1) {
-		inc++;
-		forumIndexNum = sourceCode.indexOf("<span class=\"dclink\">", (forumIndexNum + forumIndexStringLength));
-		console.log("Forum Index In Loop: forumIndexNum = " + forumIndexNum);
-	}
-
-	console.log("inc = " + inc); 
-	/*
 	indexString_Array = 
 		[
 			"\"okp.php?az=show_topics&",
 			"=",
 			"\"",
->>>>>>> 73d459872d493c34a1689cc1b7aa0e70cc23454d
+			"<span class=\"dclink\">",
 			"</span>",
 			"<span class=\"dccaption\">",
-			"<br />"
+			"<br />",
+			"u_id=",
+			"\"",
+			">",
+			"</a>",
+			"</td>"
 		];
-	
+		
 	indexNum = sourceCode.indexOf(indexString_Array[0]);
-	
+
 	while (indexNum !== -1)	{
 			
 		currentIndexNum = indexNum + indexString_Array[0].length;
@@ -111,18 +105,15 @@ function parseSourceCode(sourceCode)	{
 		if ((currentIndexNum === indexNum) || (currentIndexNum === -1))	{
 			indexNum = -1;
 		}	else	{
-<<<<<<< HEAD
-=======
-			count++;
 			
->>>>>>> 73d459872d493c34a1689cc1b7aa0e70cc23454d
+			
 			forumSearchNumStart = sourceCode.indexOf(indexString_Array[1], currentIndexNum);
 			forumSearchNumEnd = sourceCode.indexOf(indexString_Array[2], currentIndexNum);
 			
-			forumString = sourceCode.slice((forumSearchNumStart + 1), forumSearchNumEnd);
+			forumString = sourceCode.slice((forumSearchNumStart + indexString_Array[1].length), forumSearchNumEnd);
 			
 			forumNameSearchNumStart = sourceCode.indexOf(indexString_Array[3], forumSearchNumEnd);
-<<<<<<< HEAD
+			
 			forumNameSearchNumEnd = sourceCode.indexOf(indexString_Array[4], forumSearchNumStart);
 			
 			forumNameString = sourceCode.slice((forumNameSearchNumStart + indexString_Array[3].length), forumNameSearchNumEnd);
@@ -132,43 +123,39 @@ function parseSourceCode(sourceCode)	{
 			
 			forumDescString = sourceCode.slice((forumDescSearchNumStart + indexString_Array[5].length), forumDescSearchNumEnd);
 			
+			forumModSearchNumStart = sourceCode.indexOf(indexString_Array[7], forumDescSearchNumEnd);
+			forumModSearchNumEnd = sourceCode.indexOf(indexString_Array[11], (forumModSearchNumStart + indexString_Array[7].length));
+			
+			while ((forumModSearchNumStart < forumModSearchNumEnd) && (forumModSearchNumStart !== -1))	{
+				forumModIdNumSearchNumEnd = sourceCode.indexOf(indexString_Array[8], forumModSearchNumStart);
+			
+				forumModIdNumString = sourceCode.slice((forumModSearchNumStart + indexString_Array[7].length), forumModIdNumSearchNumEnd);
+			
+				forumModUsernameSearchNumStart = sourceCode.indexOf(indexString_Array[9], forumModIdNumSearchNumEnd);
+				forumModUsernameSearchNumEnd = sourceCode.indexOf(indexString_Array[10], forumModUsernameSearchNumStart);
+						
+				forumModUsernameString = sourceCode.slice((forumModUsernameSearchNumStart + indexString_Array[9].length), forumModUsernameSearchNumEnd);
+				
+				forumModSearchNumStart = sourceCode.indexOf(indexString_Array[7], forumModUsernameSearchNumEnd);
+				
+				forumModIdNumString_Array[forumModIdNumString_Array.length] = forumModIdNumString;
+				forumModUsernameString_Array[forumModUsernameString_Array.length] = forumModUsernameString;	
+			}
+			
+			
 		}
 		
-		forumString_Array[count] = forumString;
-		forumNameString_Array[count] = forumNameString;
-		forumDescString_Array[count] = forumDescString;
-		
-		count++;
-		
+		forumString_Array[forumString_Array.length] = forumString;
+		forumNameString_Array[forumNameString_Array.length] = forumNameString;
+		forumDescString_Array[forumDescString_Array.length] = forumDescString;
+				
 		indexNum = sourceCode.indexOf(indexString_Array[0], forumDescSearchNumEnd);
+	}
 	
-=======
-			forumNameSearchNumEnd = sourceCode.indexOf( forumSearchNumEnd);
-			
-			forumDescSearchNumStart = sourceCode.indexOf(indexString_Array[4], forumNameSearchNumEnd);
-			forumDescSearchNumEnd = sourceCode.indexOf(indexString_Array[5], forumDescSearchNumStart);
-			
-			forumNameString = sourceCode.slice((forumNameSearchNumStart + 9), forumNameSearchNumEnd);
-		}
-		
-		forumString_Array[inc] = forumString;
-		forumNameString_Array[inc] = forumNameString;
-		
-		var forumLinkString = indexString_Array[0] + "forum=" + forumString + "\"";
-		
-		indexNum = sourceCode.indexOf(forumLinkString, forumNameSearchNumEnd);
-		
-		console.log("indexNum = " + indexNum);
->>>>>>> 73d459872d493c34a1689cc1b7aa0e70cc23454d
-	}	
-
-	console.log("forumString_Array = " + forumString_Array);
-	console.log("forumNameString_Array = " + forumNameString_Array);
-<<<<<<< HEAD
-	console.log("forumDescString_Array = " + forumDescString_Array);
-
-=======
-	*/
->>>>>>> 73d459872d493c34a1689cc1b7aa0e70cc23454d
+	console.log("forumString_Array = " + forumString_Array + "\n");
+	console.log("forumNameString_Array = " + forumNameString_Array + "\n");
+	console.log("forumDescString_Array = " + forumDescString_Array + "\n");
+	console.log("forumModIdNumString_Array = " + forumModIdNumString_Array + "\n");
+	console.log("forumModUsernameString_Array = " + forumModUsernameString_Array + "\n");
+	
 }
-
