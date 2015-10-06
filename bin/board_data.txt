@@ -1,0 +1,6 @@
+board_data.js
+
+parseBoardData ~ 	runs through the initial board scan of all of the
+								 	code, then calls a setTimeout of the post related code.
+									 
+									* Changes interval of parseBoardData respective of time of day. 
