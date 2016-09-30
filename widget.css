@@ -1,0 +1,26 @@
+.widget { border: 1px solid #5c5c5c; padding: 14px 12px; margin-bottom:18px; position:relative; margin-top: 20px;}
+.widget:before, .widget:after { display:block; width:5px; height:100%; background: #ccc; content:''; position:absolute; top:0; left:0; }
+.widget:after {left:auto; right:0; }
+.widget.widget-adv { border: 1px solid #ccc; }
+.widget-title { font: 400 20px/22px "futura-pt"; text-transform:uppercase; text-align:center; padding:0; margin:-25px 0 0; }
+.widget-title span {background:#fff; display:inline-block; padding:0 5px; min-width:220px; }
+.widget-more {margin:10px 0 -23px; text-align:center; vertical-align:top; }
+.more-spacer { display: block; width: 105px; height: 20px; margin: 0 auto; background: #fff; padding:0 10px 0 1px; }
+.more-link { display:inline-block; font: 500 12px/16px "futura-pt"; color:#333; background:url(images/more-link-arrow.png) 88% 4px no-repeat #fff; text-transform:uppercase; text-decoration:none; padding:0 10px 0 1px; min-width: 105px; }
+.more-link span {border-bottom:3px solid transparent; }
+.more-link span:hover { color: #ff4200; }
+
+
+
+	/* Most Popular Posts */
+.popular-posts {margin:0; padding:0 0 6px; list-style: none; } 
+.popular-posts li {margin:0; padding:10px 0 0 14px; overflow:hidden; }
+.popular-posts li .thumb { width: 105px; height: 105px; /* width:120px; height:77px; */ float:left; margin:0 16px 0 0; }
+.popular-posts li .meta { font:700 11px/18px "futura-pt"; text-transform:uppercase; color:#333; }
+.popular-posts li h4 { font: 300 14px/20px "adelle"; margin:0; }
+.popular-posts li h4 a {color:#333; text-decoration:none; border-bottom:3px solid transparent; }
+.popular-posts li h4 a:hover { color: #ff4200; }
+
+
+.thumb {background:#333; overflow:hidden; }
+.thumb img {width:auto; height:105px; }
