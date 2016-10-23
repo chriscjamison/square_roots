@@ -122,7 +122,7 @@ function parseBoardData(sourceCode)	{
 			boardArchiveNameString,
 			boardArchiveDateString,
 			boardArchiveNumTopicsString
-		]
-		
-		console.log("boardArchiveData_Array = " + boardArchiveData_Array);
+		];
 }
+
+function 
