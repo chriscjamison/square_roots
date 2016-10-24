@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // This is a sample metadata file which is also hosted at https://developer.chrome.com/extensions/getstarted
 
 {
@@ -35,42 +34,4 @@
   "permissions": [
     "activeTab"
   ]
-=======
-// This is a sample metadata file which is also hosted at https://developer.chrome.com/extensions/getstarted
-
-{
-  "manifest_version": 2,
-
-  "name": "BoardReader",
-  "description": "An extension which adds improved navigation, previews content of a post when when a user hovers over a post link, and embeds social media into posts.",
-  "version": "1.0",
-
-  "icons": {  "16": "icon-16x16.png",
-              "32": "icon-32x32.png",
-              "48": "icon-48x48.png",
-              "128": "icon-128x128.png" 
-  },
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_title": "BoardReader - Makes browsing boards.okayplayer.com a better experience...hopefully."
-  },
-
-  "background": {
-    "scripts": ["background.js"], 
-    "persistence": false
-  },
-
-  "content_scripts": [
-    {
-      "matches": ["*://board.okayplayer.com/okp.php*"],
-      "css": ["reader.css"],
-      "js": ["jquery-3.0.0.js", "reader.js"]
-    }
-  ],
-  
-  "permissions": [
-    "activeTab"
-  ]
->>>>>>> 64044a6da5551076525b1ec8362d115d92f24112
 }
