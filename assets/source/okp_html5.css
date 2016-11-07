@@ -1,0 +1,80 @@
+/* okp_html5.css - Formats BoardReader's HTML5 version of http://board.okayplayer.com/okp.php */
+
+body {
+  margin: 0;
+  background-color: #fff;
+}
+
+#forum-index {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+#forum-user_menu, 
+#forum-username, 
+#forum-list > div:first-of-type {
+  width: inherit;
+  height: 1.5em;
+  padding: 0.75em;
+  border-bottom: 1px solid #000;
+}
+
+#forum-user_menu > div {
+  width: initial;
+  height: 1.25em;
+  margin-right: 1em;
+  display: inline-block;
+}
+
+#forum-user_menu a {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#forum-username {
+  background-color: #ccc;
+  font-size: 1.05em;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+#forum-username > span {
+  font-size: 1em;
+  color: #cc0000;
+}
+
+#forum-time {
+  width: initial;
+  margin: 2em 1em 0.5em 0;
+  text-align: right;
+  font-size: 1em;
+}
+
+#okp_news,
+#forum-list {
+  height: initial;
+  float: left;
+  border: 1px solid #000;
+}
+
+#okp_news {
+  width: 25.25em;
+  padding: 1em;
+}
+
+#forum-list {
+  width: 64.38em;
+  border-left: none;
+}
+
+#forum-list > div:first-of-type {
+  width: 63em;
+  background-color: #000; 
+} 
+
+#forum-list > div:first-of-type > span {
+  font-weight: 600;
+  color: #fff;
+
+}
+
