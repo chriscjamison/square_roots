@@ -1,24 +1,38 @@
 /* okp_html5.css - Formats BoardReader's HTML5 version of http://board.okayplayer.com/okp.php */
 
+/*  'body' renders the contents of the <body> tag equal to the width and height of the webpage. 
+    It also sets the background color of the webpage to white [#fff] */
 body {
   margin: 0;
   background-color: #fff;
 }
 
+/*  Draws the <div> which contains the content of the page equal to the width of the browser. 
+**  Also sets a border of 1px around the forum lists and other content. */
 #forum-index {
   width: 100%;
   border: 1px solid #000;
 }
 
+/*  Various elements, such as the <div>'s which holds the 'User menu', the username of the current user, the regions on the page 
+**  which serves as the headers for 'Announcements' and 'Top forum topics', are set to the width of browser window, 
+**  a height of "1.5em", a padding value of "0.75em" and a 1px border outlining the bottom of the color black, "#000".  */
 #forum-user_menu, 
 #forum-username, 
-#forum-list > div:first-of-type {
+#forum-list > div:first-of-type, 
+#forum-list > div:nth-child(3) {
   width: inherit;
   height: 1.5em;
   padding: 0.75em;
   border-bottom: 1px solid #000;
 }
 
+/*  The <div> which contains the header for the 'Top forum topic' has its padding value set to "0.55em" */
+#forum-list > div:nth-child(3) {
+  padding: 0.55em;
+}
+
+/*  */
 #forum-user_menu > div {
   width: initial;
   height: 1.25em;
@@ -67,14 +81,74 @@ body {
   border-left: none;
 }
 
-#forum-list > div:first-of-type {
+#forum-list > div:first-of-type, 
+#forum-list > div:nth-child(3) {
   width: 63em;
-  background-color: #000; 
+  background-color: #000;
+  clear: both;
 } 
 
-#forum-list > div:first-of-type > span {
-  font-weight: 600;
-  color: #fff;
-
+#forum-list > div:nth-child(3) {
+  width: 63.4em !important;
 }
 
+#forum-list > div:first-of-type > span, 
+#forum-list > div:nth-child(3) > span {
+  font-weight: 600;
+  color: #fff;
+}
+
+#forum-list > div:nth-child(3) > span {
+  font-size: 0.8em;
+}
+
+#forum-list > div + div:first-of-type {
+  width: 64.38em;
+  height: 3.6em;
+}
+
+#forum-list > div + div > div, 
+.forum > div:first-of-type,
+.forum > div:nth-child(2) {
+  float: left;
+}
+
+#forum-list > div + div > div:first-of-type, 
+.forum > div:first-of-type {
+  padding: 0.8em;
+  padding-left: 0.9em;
+}
+
+#forum-list > div + div > div:nth-child(2),
+.forum > div:nth-child(2) {
+  border-left: 1px solid #000;
+}
+
+#forum-list > div + div > div > div:first-of-child {
+  padding: 0.75em;
+}
+
+#forum-list > div + div > div > div {
+  padding: 0.5em;
+}
+
+#forum-list > div + div > div > div > a, 
+#forum-list > div + div > div > div > span { 
+  display: inline-block;
+}
+
+#forum-okp_news {
+  padding: 0 !important;
+}
+
+.forum > div:first-of-type {
+  padding: 0.5em;
+}
+
+.forum > div:nth-child(2) > a {
+  display: block;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.forum > 
