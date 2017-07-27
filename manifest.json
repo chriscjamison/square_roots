@@ -3,9 +3,9 @@
 {
   "manifest_version": 2,
 
-  "name": "BoardReader",
+  "name": "Square Roots",
   "description": "An extension which adds improved navigation, previews content of a post when when a user hovers over a post link, and embeds social media into posts.",
-  "version": "1.0",
+  "version": "0.1",
 
   "icons": {  "16": "icon-16x16.png",
               "32": "icon-32x32.png",
@@ -15,23 +15,38 @@
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "BoardReader - Makes browsing boards.okayplayer.com a better experience...hopefully."
+    "default_title": "Square Roots - Makes browsing boards.okayplayer.com a better experience...hopefully."
   },
 
   "background": {
-    "scripts": ["background.js"], 
+    "scripts": [
+      "jquery-3.0.0.js", 
+      "background.js", 
+      "loadBoardData.js"
+    ],
+
     "persistence": false
   },
-
+/* 
   "content_scripts": [
     {
-      "matches": ["*://board.okayplayer.com/okp.php*"],
-      "css": ["reader.css"],
-      "js": ["jquery-3.0.0.js", "reader.js"]
+       "matches": [
+        "<all_urls>"
+      ], 
+      
+      "css": [
+        "reader.css"
+      ], 
+      
+      "js": [
+        "jquery-3.0.0.js", 
+        "loadBoardData.js"
+      ]
     }
-  ],
+  ], */
   
   "permissions": [
+    "tabs", 
     "activeTab"
   ]
 }
