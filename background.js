@@ -4,3 +4,8 @@
 
 ******************************************************************/
 
+chrome.browserAction.onClicked.addListener(
+  function () {
+    chrome.tabs.create({url: "http://board.okayplayer.com/okp.php"});
+  }
+);
