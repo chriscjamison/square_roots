@@ -28,7 +28,7 @@ $(document).ready(
       // 'next_ele_vals_Array' contains the elements_searched_Array index number that matches the string to be searched for.
 
       elements_searched_Array = [
-        "<td class=\"dcmenu\" colspan=\"2\">", 
+        "<td class=\"dcmenu\">", 
         "<a href=\"", 
         "\">",
         "</a>",
@@ -56,44 +56,52 @@ $(document).ready(
         " /> ",
         "</A>"
       ];
+      
+      search_ele_nums_Array = [0, 1, 1];
 
-      search_ele_nums_Array = [0, 1];
-
-      next_ele_vals_Array = [0, 1, 2];
+      next_ele_vals_Array = [0, 1, 2, 4];
       
       inc = 0;
       next_ele_index_val = 0;
 
       html_source_code = $("html").html();
 
-      /*window.alert("one");
-      window.alert("inc = " + inc);
-      window.alert("search_ele_nums_Array.length = " + search_ele_nums_Array.length);
-      */
       while (inc < search_ele_nums_Array.length)  {
         current_index_val = html_source_code.indexOf(elements_searched_Array[next_ele_vals_Array[inc]], next_ele_index_val);
-        
+        //  window.alert("current_index_val = " + current_index_val);
         current_index_val = current_index_val + elements_searched_Array[next_ele_vals_Array[inc]].length;
-
-
-        window.alert("current_index_val = " + current_index_val);
- 
+        // window.alert("current_index_val = " + current_index_val);
+        window.alert("inc = " + inc);
         if (search_ele_nums_Array[inc] > 0) {
-
-          for (inc_2 = 1; inc_2 <= search_ele_nums_Array[inc]; inc_2++)  {
-            window.alert("current_index_val = " + current_index_val);
-            window.alert("elements_searched_Array[next_ele_vals_Array[inc + inc_2]] = " + elements_searched_Array[next_ele_vals_Array[inc + inc_2]]);
+          
+          for (inc_2 = inc; inc_2 <= search_ele_nums_Array[inc_2]; inc_2++)  {
+            window.alert("inc = " + inc);
+            window.alert("inc_2 = " + inc_2);
+            window.alert("search_ele_nums_Array[" + inc + "] = " + search_ele_nums_Array[inc_2]);
+            window.alert("elements_searched_Array[next_ele_vals_Array[" + (inc + inc_2) + "]] = " + elements_searched_Array[next_ele_vals_Array[inc + inc_2]]);
+            // window.alert("next_ele_index_val = " + next_ele_index_val);
+           /* window.alert("current_index_val = " + current_index_val);
+            if (current_index_val < next_ele_index_val) {
+              current_index_val = next_ele_index_val;
+            }*/
+            //  window.alert("current_index_val = " + current_index_val);
             next_ele_index_val = html_source_code.indexOf(elements_searched_Array[next_ele_vals_Array[inc + inc_2]], current_index_val);
-            window.alert("next_ele_index_val = " + next_ele_index_val);
+            // window.alert("next_ele_index_val = " + next_ele_index_val);
+
             data_found_Array.push(html_source_code.slice(current_index_val, next_ele_index_val));
 
-            window.alert("data_found_Array[0] = " + data_found_Array[0]);
+            window.alert("data_found_Array[" + (data_found_Array.length - 1) + "] = " + data_found_Array[(data_found_Array.length - 1)]);
+            //  window.alert("current_index_val = " + current_index_val);
+            next_ele_index_val = current_index_val;
+            //  window.alert("next_ele_index_val = " + next_ele_index_val);
+
           }
-          
         }
 
-        next_ele_index_val = current_index_val;
-
+        if (next_ele_index_val < current_index_val) {
+          next_ele_index_val = current_index_val;
+        }
+        window.alert("next_ele_index_val = " + next_ele_index_val);
         inc++;
       }
 
