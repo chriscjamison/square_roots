@@ -6,6 +6,6 @@
 
 chrome.browserAction.onClicked.addListener(
   function () {
-    chrome.tabs.create({url: "http://board.okayplayer.com/okp.php"});
+    chrome.tabs.create({url: "http://board.okayplayer.com/okp.php?az=show_topics&forum=5"});
   }
 );

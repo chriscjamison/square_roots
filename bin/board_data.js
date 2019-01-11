@@ -124,5 +124,3 @@ function parseBoardData(sourceCode)	{
 			boardArchiveNumTopicsString
 		];
 }
-
-function 

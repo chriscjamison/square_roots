@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "Launch Chrome against localhost, with sourcemaps",
       "type": "chrome",
@@ -21,7 +22,7 @@
       "name": "BoardReader", 
       "type": "chrome",
       "request": "launch",
-      "file": "C:\\Projects\\BoardReader\\background.js",
+      "file": "C:\\Users\\chris\\OneDrive\\Chris C Jamison, Inc\\Projects\\Apps\\BoardReader\\Source Code\\background.html",
       "sourceMaps": true,
       "webRoot": "${workspaceRoot}"
     }
